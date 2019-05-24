@@ -54,30 +54,32 @@
             this.lblTotalChannels = new System.Windows.Forms.Label();
             this.cboInfoType = new System.Windows.Forms.ComboBox();
             this.grpAccountCredentials = new System.Windows.Forms.GroupBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPortalUrl = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.txtPortalUrl = new System.Windows.Forms.TextBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.lblUserId = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.grpUrls = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblTsM3u = new System.Windows.Forms.LinkLabel();
-            this.lblHlsM3u = new System.Windows.Forms.LinkLabel();
-            this.lblXmlEpg = new System.Windows.Forms.LinkLabel();
             this.lblWatchOnline = new System.Windows.Forms.LinkLabel();
+            this.lblXmlEpg = new System.Windows.Forms.LinkLabel();
+            this.lblHlsM3u = new System.Windows.Forms.LinkLabel();
+            this.lblTsM3u = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCreateShortLinks = new System.Windows.Forms.Button();
             this.lblXmlEpgShort = new System.Windows.Forms.LinkLabel();
             this.lblHlsM3uShort = new System.Windows.Forms.LinkLabel();
             this.lblTsM3uShort = new System.Windows.Forms.LinkLabel();
             this.label13 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnCreateShortLinks = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblCatchupChannels = new System.Windows.Forms.Label();
             this.grpAccountCredentials.SuspendLayout();
             this.grpUrls.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -325,6 +327,14 @@
             this.grpAccountCredentials.TabStop = false;
             this.grpAccountCredentials.Text = "Enter Account Credentials";
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(272, 79);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(145, 22);
+            this.txtPassword.TabIndex = 32;
+            this.txtPassword.Visible = false;
+            // 
             // lblPortalUrl
             // 
             this.lblPortalUrl.AutoSize = true;
@@ -334,6 +344,16 @@
             this.lblPortalUrl.TabIndex = 27;
             this.lblPortalUrl.Text = "Portal URL:";
             this.lblPortalUrl.Visible = false;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(172, 82);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(62, 14);
+            this.lblPassword.TabIndex = 31;
+            this.lblPassword.Text = "Password:";
+            this.lblPassword.Visible = false;
             // 
             // txtPortalUrl
             // 
@@ -361,24 +381,6 @@
             this.lblUserId.Text = "User ID:";
             this.lblUserId.Visible = false;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(272, 79);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(145, 22);
-            this.txtPassword.TabIndex = 32;
-            this.txtPassword.Visible = false;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(172, 82);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(62, 14);
-            this.lblPassword.TabIndex = 31;
-            this.lblPassword.Text = "Password:";
-            this.lblPassword.Visible = false;
-            // 
             // grpUrls
             // 
             this.grpUrls.Controls.Add(this.lblWatchOnline);
@@ -396,32 +398,53 @@
             this.grpUrls.TabStop = false;
             this.grpUrls.Text = "Account URLs";
             // 
-            // label14
+            // lblWatchOnline
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 46);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 14);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "XML EPG:";
+            this.lblWatchOnline.AutoSize = true;
+            this.lblWatchOnline.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblWatchOnline.Location = new System.Drawing.Point(143, 60);
+            this.lblWatchOnline.Name = "lblWatchOnline";
+            this.lblWatchOnline.Size = new System.Drawing.Size(39, 14);
+            this.lblWatchOnline.TabIndex = 39;
+            this.lblWatchOnline.TabStop = true;
+            this.lblWatchOnline.Text = "--------";
+            this.lblWatchOnline.Click += new System.EventHandler(this.CopyToClipboard);
             // 
-            // label15
+            // lblXmlEpg
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 32);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 14);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "HLS M3U:";
+            this.lblXmlEpg.AutoSize = true;
+            this.lblXmlEpg.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblXmlEpg.Location = new System.Drawing.Point(143, 46);
+            this.lblXmlEpg.Name = "lblXmlEpg";
+            this.lblXmlEpg.Size = new System.Drawing.Size(39, 14);
+            this.lblXmlEpg.TabIndex = 38;
+            this.lblXmlEpg.TabStop = true;
+            this.lblXmlEpg.Text = "--------";
+            this.lblXmlEpg.Click += new System.EventHandler(this.CopyToClipboard);
             // 
-            // label16
+            // lblHlsM3u
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 14);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "TS M3U:";
+            this.lblHlsM3u.AutoSize = true;
+            this.lblHlsM3u.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblHlsM3u.Location = new System.Drawing.Point(143, 32);
+            this.lblHlsM3u.Name = "lblHlsM3u";
+            this.lblHlsM3u.Size = new System.Drawing.Size(39, 14);
+            this.lblHlsM3u.TabIndex = 37;
+            this.lblHlsM3u.TabStop = true;
+            this.lblHlsM3u.Text = "--------";
+            this.lblHlsM3u.Click += new System.EventHandler(this.CopyToClipboard);
+            // 
+            // lblTsM3u
+            // 
+            this.lblTsM3u.AutoSize = true;
+            this.lblTsM3u.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblTsM3u.Location = new System.Drawing.Point(143, 18);
+            this.lblTsM3u.Name = "lblTsM3u";
+            this.lblTsM3u.Size = new System.Drawing.Size(39, 14);
+            this.lblTsM3u.TabIndex = 36;
+            this.lblTsM3u.TabStop = true;
+            this.lblTsM3u.Text = "--------";
+            this.lblTsM3u.Click += new System.EventHandler(this.CopyToClipboard);
             // 
             // label8
             // 
@@ -432,8 +455,37 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Watch Online:";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 14);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "TS M3U:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(15, 32);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 14);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "HLS M3U:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 46);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(54, 14);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "XML EPG:";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblCatchupChannels);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblTotalChannels);
@@ -461,54 +513,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account Information";
             // 
-            // lblTsM3u
-            // 
-            this.lblTsM3u.AutoSize = true;
-            this.lblTsM3u.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblTsM3u.Location = new System.Drawing.Point(143, 18);
-            this.lblTsM3u.Name = "lblTsM3u";
-            this.lblTsM3u.Size = new System.Drawing.Size(39, 14);
-            this.lblTsM3u.TabIndex = 36;
-            this.lblTsM3u.TabStop = true;
-            this.lblTsM3u.Text = "--------";
-            this.lblTsM3u.Click += new System.EventHandler(this.CopyToClipboard);
-            // 
-            // lblHlsM3u
-            // 
-            this.lblHlsM3u.AutoSize = true;
-            this.lblHlsM3u.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblHlsM3u.Location = new System.Drawing.Point(143, 32);
-            this.lblHlsM3u.Name = "lblHlsM3u";
-            this.lblHlsM3u.Size = new System.Drawing.Size(39, 14);
-            this.lblHlsM3u.TabIndex = 37;
-            this.lblHlsM3u.TabStop = true;
-            this.lblHlsM3u.Text = "--------";
-            this.lblHlsM3u.Click += new System.EventHandler(this.CopyToClipboard);
-            // 
-            // lblXmlEpg
-            // 
-            this.lblXmlEpg.AutoSize = true;
-            this.lblXmlEpg.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblXmlEpg.Location = new System.Drawing.Point(143, 46);
-            this.lblXmlEpg.Name = "lblXmlEpg";
-            this.lblXmlEpg.Size = new System.Drawing.Size(39, 14);
-            this.lblXmlEpg.TabIndex = 38;
-            this.lblXmlEpg.TabStop = true;
-            this.lblXmlEpg.Text = "--------";
-            this.lblXmlEpg.Click += new System.EventHandler(this.CopyToClipboard);
-            // 
-            // lblWatchOnline
-            // 
-            this.lblWatchOnline.AutoSize = true;
-            this.lblWatchOnline.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblWatchOnline.Location = new System.Drawing.Point(143, 60);
-            this.lblWatchOnline.Name = "lblWatchOnline";
-            this.lblWatchOnline.Size = new System.Drawing.Size(39, 14);
-            this.lblWatchOnline.TabIndex = 39;
-            this.lblWatchOnline.TabStop = true;
-            this.lblWatchOnline.Text = "--------";
-            this.lblWatchOnline.Click += new System.EventHandler(this.CopyToClipboard);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnCreateShortLinks);
@@ -524,6 +528,16 @@
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Create Short URLs (Optional!)";
+            // 
+            // btnCreateShortLinks
+            // 
+            this.btnCreateShortLinks.Location = new System.Drawing.Point(48, 28);
+            this.btnCreateShortLinks.Name = "btnCreateShortLinks";
+            this.btnCreateShortLinks.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateShortLinks.TabIndex = 40;
+            this.btnCreateShortLinks.Text = "Create";
+            this.btnCreateShortLinks.UseVisualStyleBackColor = true;
+            this.btnCreateShortLinks.Click += new System.EventHandler(this.BtnCreateShortLinks_Click);
             // 
             // lblXmlEpgShort
             // 
@@ -588,15 +602,24 @@
             this.label18.TabIndex = 30;
             this.label18.Text = "XML EPG:";
             // 
-            // btnCreateShortLinks
+            // label7
             // 
-            this.btnCreateShortLinks.Location = new System.Drawing.Point(48, 28);
-            this.btnCreateShortLinks.Name = "btnCreateShortLinks";
-            this.btnCreateShortLinks.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateShortLinks.TabIndex = 40;
-            this.btnCreateShortLinks.Text = "Create";
-            this.btnCreateShortLinks.UseVisualStyleBackColor = true;
-            this.btnCreateShortLinks.Click += new System.EventHandler(this.BtnCreateShortLinks_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(235, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 14);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Catch-Up Channels:";
+            // 
+            // lblCatchupChannels
+            // 
+            this.lblCatchupChannels.AutoSize = true;
+            this.lblCatchupChannels.Location = new System.Drawing.Point(379, 60);
+            this.lblCatchupChannels.Name = "lblCatchupChannels";
+            this.lblCatchupChannels.Size = new System.Drawing.Size(39, 14);
+            this.lblCatchupChannels.TabIndex = 26;
+            this.lblCatchupChannels.Text = "--------";
+            this.lblCatchupChannels.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmIptvAccountInfo
             // 
@@ -683,6 +706,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCatchupChannels;
     }
 }
 

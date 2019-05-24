@@ -97,6 +97,17 @@ namespace IptvAccountInfo
                 lblMovieCategories.Text = ((_iptvAccount.Categories.Movie != null) ? _iptvAccount.Categories.Movie.Count() : 0).ToString("N0");
                 lblSeriesCategories.Text = ((_iptvAccount.Categories.Series != null) ? _iptvAccount.Categories.Series.Count() : 0).ToString("N0");
 
+                int catchupChannelCount = 0;
+                foreach(var keyValuePair in _iptvAccount.AvailableChannels)
+                {
+                    var channel = keyValuePair.Value;
+                    if(channel.TvArchiveDuration > 0)
+                    {
+                        catchupChannelCount++;
+                    }
+                }
+
+                lblCatchupChannels.Text = catchupChannelCount.ToString();
                 lblTotalChannels.Text = _iptvAccount.AvailableChannels.Count.ToString("N0");
 
                 lblTsM3u.Text = TsM3uUrl;
